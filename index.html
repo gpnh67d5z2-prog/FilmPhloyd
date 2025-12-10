@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmPhloyd - Кинотека</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23ff6b6b'/><polygon points='40,30 40,70 70,50' fill='white'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+                    <polygon points="40,30 40,70 70,50" fill="currentColor"/>
+                </svg>
+                FilmPhloyd
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Волшебный семейный вечер с попкорном</h1>
+            <p class="hero-description">
+                Здесь можно выбрать фильм, мультфильм, а также сериал на ваш вкус. 
+                У нас все новинки в хорошем качестве. Смотрите с удовольствием.
+            </p>
+            <button class="watch-btn">Смотреть</button>
+            <div class="hero-filters">
+                <div class="filter-item">
+                    <label>Жанры</label>
+                    <select id="genreFilter" class="filter-select">
+                        <option value="">Все жанры</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label>Годы</label>
+                    <select id="yearFilter" class="filter-select">
+                        <option value="">Все годы</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="hero-carousel" id="heroCarousel">
+            <div class="carousel-controls" id="carouselControls"></div>
+        </div>
+    </section>
+
+    <section class="search-section" id="films">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Поиск фильмов..." 
+            class="search-input"
+        >
+        <button id="searchBtn" class="search-btn">Поиск</button>
+    </section>
+
+    <div class="main-container">
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Загрузка фильмов...</p>
+        </div>
+
+        <div id="resultsContainer" class="results-container"></div>
+
+        <div id="noResults" class="no-results" style="display: none;">
+            <p>Фильмы не найдены. Попробуйте другой поиск.</p>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn" class="page-btn">← Назад</button>
+            <span id="pageInfo" class="page-info">Страница 1</span>
+            <button id="nextBtn" class="page-btn">Вперед →</button>
+        </div>
+    </div>
+
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
